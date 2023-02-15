@@ -16,7 +16,7 @@ module.exports = class CantooClient {
   _onLoadDocumentRequestListener
 
   constructor() {
-    this.postMessageListener = () => {
+    this._postMessageListener = () => {
       window.addEventListener('message', (event) => {
         if (!event.origin || !event.origin.replace(/https:\/\/(develop.|preprod.)?/g, '').startsWith("cantoo.fr")) return
         if (!event.data || !event.data.name) console.error(new Error('Malformed message from Cantoo.\n' + event.data))
@@ -66,7 +66,7 @@ module.exports = class CantooClient {
    * Free up the memory and remove the listeners set on the window object
    */
   destroy() {
-    window.removeEventListener('message', this.postMessageListener)
+    window.removeEventListener('message', this._postMessageListener)
     window.postMessage({ name: 'destroyed' })
   }
 
