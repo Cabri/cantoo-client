@@ -4,16 +4,16 @@
 module.exports = class CantooClient {
 
   /** @type {() => void} */
-  _postMessageListener
-
-  /** @type {() => Promise<CantooDocumentData>} */
-  _onDocumentRequestListener
-
-  /** @type {() => Promise<void>} */
-  _onClearRequestListener
-
-  /** @type {(data: string) => Promise<void>} **/
-  _onLoadDocumentRequestListener
+  // _postMessageListener
+  //
+  // /** @type {() => Promise<CantooDocumentData>} */
+  // _onDocumentRequestListener
+  //
+  // /** @type {() => Promise<void>} */
+  // _onClearRequestListener
+  //
+  // /** @type {(data: string) => Promise<void>} **/
+  // _onLoadDocumentRequestListener
 
   constructor() {
     this._postMessageListener = () => {
